@@ -80,3 +80,14 @@ int main()
 
 ///////////////////////////////////  R CALCULATION      /////////////////////////////////
 
+
+
+double rcalc(float a,float b,float c,float d,float e)
+{
+    double f;
+    for (int i = 0; i < n; i++)
+    {
+        f = (a - (d*c)) / (sqrt(  ((n * b) - (d*d)) * ((n*e) - (c*c)) )   );   
+    }
+    return f;
+}
