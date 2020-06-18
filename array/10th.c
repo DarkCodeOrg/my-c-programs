@@ -3,8 +3,18 @@
 
 #define n  5
 
+double rcalc(float ,float ,float ,float ,float);        //declaration of the r calculation function 
 
-double rcalc(float ,float ,float ,float ,float);
+double rcalc(float a,float b,float c,float d,float e)
+{
+    double f;
+    for (int i = 0; i < n; i++)
+    {
+        f = (a - (d*c)) / (sqrt(  ((n * b) - (d*d)) * ((n*e) - (c*c)) )   );   
+    }
+    return f;
+}
+
 
 int main()
 
@@ -19,17 +29,17 @@ int main()
 
                 //taking values of x              //
                                                   // here we are just taking the user  inputs 
-            printf("enter values of x : ");       //
             for (int i = 0; i < n ; i++)          // so dont waste much of your time here
             {                                     //
+                    printf("enter %d th value of x : ",(i+1));       //
                      scanf("%f",&x[i]);          // ;-)  :-)
             }
                
                //taking values of y 
                
-            printf("enter values of y : ");
             for (int i = 0; i < n ; i++)
             {
+                printf("enter  %d th value of y : ",(i+1));
                      scanf("%f",&y[i]);
             }
     
@@ -69,6 +79,8 @@ int main()
 
 
 ///////////////////////////////////  R CALCULATION      /////////////////////////////////
+
+
 
 double rcalc(float a,float b,float c,float d,float e)
 {

@@ -1,0 +1,9 @@
+#ignore the vscode files
+.vscode
+
+.env
+
+#the testing file
+test.c
+
+
