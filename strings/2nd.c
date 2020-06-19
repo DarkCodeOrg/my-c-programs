@@ -18,4 +18,7 @@ int main()
     printf("the length of a is %d and as of b is %d and the final string is %s \n",i,j,a);
 
     return 0;
+  
 }
+
+
