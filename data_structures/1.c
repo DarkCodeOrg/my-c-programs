@@ -6,7 +6,7 @@ struct passenger
     }p[3];
 
 
-void display1(struct passenger *A);
+void display1(struct passenger *A);   // the structure elements would be passed to these functions
 void display2(struct passenger *B);
 void display3(struct passenger *C);
 int main(void)
