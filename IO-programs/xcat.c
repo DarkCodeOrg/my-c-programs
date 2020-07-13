@@ -1,6 +1,6 @@
                    // this program is used for displaying the contents of a file
                    // this program also takes direct input from the command line
-                   // this program is a clone of the cat binary as in unix OS 
+                   // this program is a clone of the cat binary as in unix/linux OS 
 
 #include<stdio.h>
 #include<stdlib.h>
