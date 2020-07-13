@@ -1,4 +1,5 @@
 #include<stdio.h>
+#pragma pack(1)
 struct passenger
     {
         char source_destn[30], target_destn[30], name[50], gender[1], address[50]; int age;
