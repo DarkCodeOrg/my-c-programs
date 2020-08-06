@@ -11,7 +11,7 @@ int main(int argc ,char *argv[])
 
         FILE *fp;  // data type for files 
         char ch;    // this chararcter variable would store the first character of the file 
-        fp = fopen(argv[1],"r");  // to read or write from or to a file we must at first open the file
+        fp = fopen(argv[1],"r+");  // to read or write from or to a file we must at first open the file
                                   // fopen opens the file in read mode (thats why we specified 'r')
                                   // tasks that fopen perfrms are :: 1) it searches the file to be opened on the disk
                                   // 2) it loads the file from the disk into a buffer in the memory
