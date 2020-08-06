@@ -24,32 +24,27 @@
 
     // SET flags
 
-    printf("/////// /////////  Turning ON flags using |= operator  ///////////////////////// ///////////////////\n\n");
+    printf("/////// /////////  Turning ON flags (Set Flags) using |= operator  ///////////////////////// ///////////////////\n\n");
  
     uint8_t variable = 0b00000000; // initial value of the variable is 0 i.e all the flags are OFF,  Note : each bit in the variable is considered as a flag 
-
-    // setting the first bit on 
 
     variable |= FLAG(0);  // this would set the first flag of variable to ON state
     assert(variable == 0b00000001);  // ==1   // NOTE : the assert is a macro that is used to check the validity of the given input , if the given condition is true then program execution continues and if the condition is false then the program execution is stopped there only  
     printf("after setting 1st flag ON, value of variable is = %hhu\n",variable);
 
-    // setting the second bit on 
-
     variable |= FLAG(1);  // this would set the second flag of variable to ON state
     assert(variable == 0b00000011);  // ==3
     printf("after setting 2nd flag ON, value of variable is = %hhu\n",variable); 
-
-    // setting the next two bits on 
 
     variable |= (FLAG(2)| FLAG(3));  // this would set the next two flags of variable to ON state
     assert(variable == 0b00001111); // == 15
     printf("after setting the next two (3rd and 4th) flag ON, value of variable is = %hhu\n",variable);
 
-    printf("/////////////////// Turning off flags using &= and ~ operators together ////////////////////// ////////////////\n\n");
+    printf("/////////////////// Turning off flags (CLear flag) using &= and ~ operators together ////////////////////// ////////////////\n\n");
+    // Clear Flags
 
-    // value of the variable after all the above operations are executed is = 0b00001111 = 15
-    // now we would set all the flags, that we turned on, to OFF state
+                                      // value of the variable after all the above operations are executed is = 0b00001111 = 15
+                                      // now we would set all the flags, that we turned on, to OFF state
 
     variable &= ~(FLAG(0));  // this turn the first flag off
     assert(variable == 0b00001110); // == 14
@@ -64,6 +59,18 @@
     printf("after turning the next two (3rd and 4th) flag off the value of the variable is : %hhu\n",variable);
 
 
+    printf("///////////////////// Checking Whether a bit is On or OFF (Check Flag) using & operator\n\n");
+
+    // Check Flag state
+
+                                                            // After the previous operations the variable got set to Zero Again i.e all the flags are off
+
+    uint8_t check_variable = variable & FLAG(0); // this would store the value of the & operation in the check_variable 
+    assert(check_variable == 0b00000000);      // &ing variable with FLag0 :  0000 0000 & 0000 0001 = 0000 0000
+    printf("The Value of check_variable after checking the first flag of variable is : %hhu\n",check_variable);
+
+    
+                                    
 
 
     return 0;
