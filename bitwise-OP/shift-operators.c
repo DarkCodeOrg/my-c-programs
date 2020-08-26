@@ -5,7 +5,7 @@
 
  int main(void)
 {   
-    // this program is for showing the use of left and right shift operators and |= and &= and ~ operator
+    // this program is for showing the use of left and right shift operators and |= and &= and ~ and ^ operator
 
     // LEFT shift operator << 
     int x = 1 << 2 ; // this means that the bits of 1 (0000 0001) are shifted towards left by 2 places and becomes : 0000 0100 (4) and is stored in x
@@ -24,7 +24,7 @@
 
     // SET flags
 
-    printf("/////// /////////  Turning ON flags (Set Flags) using |= operator  ///////////////////////// ///////////////////\n\n");
+    printf("////////////////////////////////////  Turning ON flags (Set Flags) using |= operator  /////////////////////////////\n\n");
  
     uint8_t variable = 0b00000000; // initial value of the variable is 0 i.e all the flags are OFF,  Note : each bit in the variable is considered as a flag 
 
@@ -40,7 +40,7 @@
     assert(variable == 0b00001111); // == 15
     printf("after setting the next two (3rd and 4th) flag ON, value of variable is = %hhu\n",variable);
 
-    printf("/////////////////// Turning off flags (CLear flag) using &= and ~ operators together ////////////////////// ////////////////\n\n");
+    printf("/////////////////////////////         Turning off flags (CLear flag) using &= and ~ operators together ///////////////////////////\n\n");
     // Clear Flags
 
                                       // value of the variable after all the above operations are executed is = 0b00001111 = 15
@@ -59,7 +59,7 @@
     printf("after turning the next two (3rd and 4th) flag off the value of the variable is : %hhu\n",variable);
 
 
-    printf("///////////////////// Checking Whether a bit is On or OFF (Check Flag) using & operator\n\n");
+    printf("/////////// Checking Whether a bit is On or OFF (Check Flag) using & operator/////////////////\n\n");
 
     // Check Flag state
 
@@ -69,8 +69,15 @@
     assert(check_variable == 0b00000000);      // &ing variable with FLag0 :  0000 0000 & 0000 0001 = 0000 0000
     printf("The Value of check_variable after checking the first flag of variable is : %hhu\n",check_variable);
 
-    
-                                    
+    printf("//////////////////////// Toggling Flags i.e flipping individual bits (bitflags) using XOR(^) operator//\n\n");
+
+    // the varible has now all the bits set to OFF i.e 0 value of variable now is 0b0000 0000
+    // so lets set its first (0th bit) and 4th bitFlags (3rd bit) to ON state
+
+    variable ^= FLAG(0)|FLAG(3) ;
+    assert(variable == 0b00001001);
+    printf("the value of the variable now is : %hhu\n",variable);
+
 
 
     return 0;
