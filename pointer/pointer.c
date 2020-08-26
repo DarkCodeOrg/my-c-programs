@@ -27,17 +27,19 @@ void pointerToAPointer(){
 
     // this code snippet will have a pointer to a variable and a pointer to that pointer
 
-    char a = "A";
-    char *ptr;
-    char **ptr2;
+    int b = 10;
+    int *ptr;
+    int **ptr2;
     
-    ptr = &a;
+    ptr = &b;
     ptr2 = &ptr;
     
+    // the * operator returns the value of the variable pointed to by its operand
 
-    printf("the value of the variable a is : %c\n",&a);
-    printf("the value at *ptr = %c\n",*(&ptr));
-    printf("the value at **ptr2 = %c\n",**(&ptr2));
+    printf("the value of the variable a is : %d\n",b);
+    printf("the address of a is : %p\n",&b);
+    printf("the value at *ptr = %d\n",*ptr);
+    printf("the value at **ptr2 = %d\n",**ptr2);
     
 }
 
