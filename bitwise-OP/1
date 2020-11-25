@@ -1,0 +1,119 @@
+#include<stdio.h>
+#include<stdint.h>
+
+#define FLAG(n) (1 << n)
+
+#define CLR_FLAG(v, f)  ((v) |=  (f))
+#define SET_FLAG(v, f)  ((v) &= ~(f))
+#define TGL_FLAG(v, f)  ((v) ^=  (f))
+#define CHK_FLAG(v, f)  ((v)  &  (f)) 
+
+
+void menu()
+{
+    printf("1) CLEAR  FLAG\t\n");
+    printf("2) SET    FLAG\t\n");
+    printf("3) TOGGLE FLAG\t\n");
+    printf("4) CHECK  FLAG\t\n");
+}
+int main(void)     
+{    
+        int num;
+        int bitflag;
+        int choice;
+        printf("what do you want to do ?\t\n");
+        menu();
+        printf("Your Selection:");
+        scanf("%d",&choice);
+
+        switch (choice)
+        {
+        case 1:
+                        printf("Enter your number :");
+                        scanf("%d",&num);
+
+                        printf("Enter the bitFlag number(0 to 7) which you want to clear: ");
+                        scanf("%d",bitflag);
+                        
+
+
+                        break;
+
+        case 2:
+                    printf("Enter your number/character : ");
+                    fgets(variable,3,stdin);
+                    printf("Enter the bitFlag number(0 to 7) which you want to set: ");
+                    scanf("%d",bitflag);
+                        if (sscanf(variable,"%d",&variable_int) == 1)
+                        {
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_char);                
+
+                        }
+                        else if (sscanf(variable,"%c",&variable_char) == 1)
+                        {
+                        
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_int);
+                        }else{
+                            printf("The Entered datatype is not valid\n");
+                        }
+
+                    
+                    break;
+        
+        case 3:
+                    printf("Enter your number/character : ");
+                        fgets(variable,1,stdin);
+                        printf("Enter the bitFlag number(0 to 7) which you want to toggle: ");
+                        scanf("%d",bitflag);
+                        if (sscanf(variable,"%d",&variable_int) == 1)
+                        {
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_char);                
+
+                        }
+                        else if (sscanf(variable,"%c",&variable_char) == 1)
+                        {
+                        
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_int);
+                        }else{
+                            printf("The Entered datatype is not valid\n");
+                        }
+   
+            
+            
+                    break;
+
+        case 4:
+            printf("Enter your number/character : ");
+            fgets(variable,1,stdin);
+            printf("Enter the bitFlag number(0 to 7) which you want to check: ");
+            scanf("%d",bitflag);
+                        if (sscanf(variable,"%d",&variable_int) == 1)
+                        {
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_char);                
+
+                        }
+                        else if (sscanf(variable,"%c",&variable_char) == 1)
+                        {
+                        
+                            CLR_FLAG(variable_char, bitflag);
+                            printf("The result in decimal is :%d\n",variable_int);
+                        }else{
+                            printf("The Entered datatype is not valid\n");
+                        }
+            
+            break;
+
+        
+        default:
+            printf("please enter a valid choice\n");
+            break;
+        }
+
+    
+    return 0;
+}
