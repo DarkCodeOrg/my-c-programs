@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdint.h>
 #include<math.h>
+#include<stdlib.h>
 
 #define FLAG(n) (1 << n)
 
@@ -11,7 +12,8 @@
 
 
 void menu()
-{
+{   
+    printf("9) QUIT THE PROG\t\n");
     printf("1) CLEAR  FLAG\t\n");
     printf("2) SET    FLAG\t\n");
     printf("3) TOGGLE FLAG\t\n");
@@ -22,15 +24,24 @@ int main(void)
         int num;
         int n;
         int choice;
+
+        do
+        {
+            
+        
         printf("Enter your number :");
         scanf("%d",&num);
+
         printf("what do you want to do ?\t\n");
-        menu();
+                menu();
         printf("Your Selection:");
         scanf("%d",&choice);
 
         switch (choice)
         {
+        case 9:
+            exit;
+
         case 1:
 
             printf("Enter the bitFlag number(0 to 7) which you want to clear: ");
@@ -79,6 +90,9 @@ int main(void)
             break;
         }
 
+    
+    } while (1);
+    
     
     return 0;
 }

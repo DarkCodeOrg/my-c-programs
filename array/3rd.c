@@ -17,7 +17,7 @@ int main()
 		  for (int x=0; x<5;x++)
 			 printf("the ans is : %d\n",arr[x]);
 
-return 00;
+return 0;
 }
 
 
