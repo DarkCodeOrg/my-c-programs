@@ -3,7 +3,7 @@
 #include<arpa/inet.h>  // inet_addr
 
 int main(int argc , char *argv[]){
-	int socket_desc;
+	int socket_desc, new_socket, c;
     struct sockaddr_in server, client;
 
     socket_desc = socket(AF_INET , SOCK_STREAM , 0);
@@ -13,7 +13,7 @@ int main(int argc , char *argv[]){
     
     // preparing the sockaddr_in structure to use as input to bind function 
     server.sin_family = AF_INET;
-    server.sin_addr.s_addr = INADDR_ANy;
+    server.sin_addr.s_addr = INADDR_ANY;
     server.sin_port = htons( 8888  );
 
     // bind 
