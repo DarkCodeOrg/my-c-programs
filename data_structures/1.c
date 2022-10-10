@@ -7,9 +7,8 @@ struct passenger
     }p[3];
 
 
-void display1(struct passenger *A);   // the structure elements would be passed to these functions
-void display2(struct passenger *B);
-void display3(struct passenger *C);
+void display1(struct passenger *A,int i);   // the structure elements would be passed to these functions
+
 int main(void)
 {
 
@@ -46,30 +45,19 @@ int main(void)
     
     printf("\n\ndisplaying them by passing the structure elements to functions : \n");
     
-    display1(&p[0]);
-    display2(&p[1]);
-    display3(&p[2]);
+    for (int i = 0; i < 3; i++)
+    {
+        display1(&p[i],i+1);
+    }
+    
 
     return 0;
 }
 
-void display1(struct passenger *A)
+void display1(struct passenger *A,int i)
 {
-    printf("\n\n this is passenger 1\n");
+    printf("\n\n this is passenger %d\n",i);
     printf("name: %s address: %s gender:%s age: %d \nsrc_destn: %s target_destn: %s",A->name, A->address, A->gender, A->age, A->source_destn, A->target_destn);
 
 }
 
-void display2(struct passenger *B)
-{
-    printf("\n\n this is passenger 2\n");
-    printf("name: %s address: %s gender:%s age: %d \nsrc_destn: %s target_destn: %s",B->name, B->address, B->gender, B->age, B->source_destn, B->target_destn);
-
-}
-
-void display3(struct passenger *C)
-{
-    printf("\n\n this is passenger 3\n");
-    printf("name: %s address: %s gender:%s age: %d \nsrc_destn: %s target_destn: %s",C->name, C->address, C->gender, C->age, C->source_destn, C->target_destn);
-
-}
